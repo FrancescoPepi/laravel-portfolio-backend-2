@@ -3,15 +3,15 @@ return [
     'types' => [
         [
             'label' => 'Front-End',
-            'color' => '',
+            'color' => '#22d835',
         ],
         [
             'label' => 'Back-End',
-            'color' => '',
+            'color' => '#54aedb',
         ],
         [
             'label' => 'Full-Stack',
-            'color' => '',
+            'color' => '#cdc245',
         ],
     ]
 ];

@@ -13,4 +13,9 @@ class Projects extends Model
         "url",
         "description",
     ];
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ProjectsController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\PageController as AdminPageController;
@@ -25,7 +26,7 @@ Route::middleware(['auth', 'verified'])
   ->group(function () {
 
     Route::get('/', [AdminPageController::class, 'index'])->name('home');
-
+    Route::resource('projects', ProjectsController::class);
   });
 
 require __DIR__ . '/auth.php';

@@ -13,12 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('types', function (Blueprint $table) {
-            $table->id();
-            $table->string('label');
-            $table->char('color', '7');
-            $table->timestamps();
-        });
+        //
     }
 
     /**
@@ -28,6 +23,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('types');
+        //
     }
 };
