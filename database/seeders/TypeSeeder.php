@@ -34,7 +34,7 @@ class TypeSeeder extends Seeder
 
         foreach ($_types as $_type) {
             $types = new Type();
-            $types->name = $_type['label'];
+            $types->label = $_type['label'];
             $types->color = $_type['color'];
             $types->save();
         }
