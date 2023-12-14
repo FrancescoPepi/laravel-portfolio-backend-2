@@ -18,7 +18,7 @@ class ProjectsController extends Controller
     {
         $projects = $projects->paginate(10);
 
-        return view("admin.projects.index", compact("projects"));
+        return view('admin.projects.index', compact('projects'));
     }
 
     /**
@@ -28,7 +28,7 @@ class ProjectsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.projects.create');
     }
 
     /**
