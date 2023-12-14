@@ -39,7 +39,11 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $project = new Project();
+        $project->fill($data);
+        $project->save();
+        return redirect()->route('admin.projects.index');
     }
 
     /**
@@ -48,10 +52,10 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+    // public function show($id)
+    // {
+    //     //
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -59,9 +63,9 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -71,9 +75,12 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Project $project)
     {
-        //
+        $data = $request->all();
+        $project = update($data);
+        // $project->save();
+        return redirect()->route('admin.projects.index');
     }
 
     /**
@@ -82,8 +89,9 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        return redirect()->route('admin.projects.index');
     }
 }
