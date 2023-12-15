@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Projects;
+use App\Models\Type;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -26,9 +27,10 @@ class ProjectsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Type $type)
     {
-        return view('admin.projects.create');
+        $types = $type->all();
+        return view('admin.projects.create', compact('types'));
     }
 
     /**
